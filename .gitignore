@@ -1,0 +1,11 @@
+# don't keep the recipes in the repo, for copyright/license reasons
+plain/*
+
+# and don't keep the rendered files either
+rendered/*
+
+# we're not concerned with specific versions of Homebrew packages
+Brewfile.lock.json
+
+# nor do we need to share the ninja log
+.ninja_log
