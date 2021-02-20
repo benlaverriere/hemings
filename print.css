@@ -1,2 +1,3 @@
-* { font-family: serif; }
-h1 { page-break-before: always; font-family: "Jost*"; }
+* { font-family: "Georgia"; font-weight: 400; }
+h1 { page-break-before: always; }
+h1, h2, h3, h4, h5, h6 { font-family: "Jost*"; font-weight: 900; }
