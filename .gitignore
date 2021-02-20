@@ -7,5 +7,6 @@ rendered/*
 # we're not concerned with specific versions of Homebrew packages
 Brewfile.lock.json
 
-# nor do we need to share the ninja log
+# nor do we need to share the ninja buildfile or its log
+build.ninja
 .ninja_log

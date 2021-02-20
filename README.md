@@ -16,7 +16,10 @@ readable in its raw form after a quick search.
 
 ## usage
 
-`brew bundle install` to ensure system-level software is installed (pandoc and ninja)
+0. `brew bundle install` to ensure system-level software is installed
+  - This doesn't install Ruby, so ensure you have a recent Ruby available
+0. `generate_build.rb` to create the build script based on contents of `./plain/*.md`
+0. `ninja` to render the individual recipes to PDF
 
 ## ideas, questions, TODOs
 

@@ -1,5 +1,0 @@
-rule recipe2pdf
-  command = pandoc -f markdown -t html -s -o $out $in
-  description = recipe2pdf $in $out
-
-build rendered/singles/bacon_wrapped_pork_tenderloin.pdf: recipe2pdf plain/bacon_wrapped_pork_tenderloin.md
