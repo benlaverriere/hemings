@@ -9,10 +9,11 @@ require 'active_support/inflector'
 BUILD_FILE = 'build.ninja'
 INPUT_FILE_GLOB = './plain/*.md'
 FULL_OUTPUT_FILE = './rendered/full.pdf'
+CSS_FILE = 'print.css'
 
 COMBINE_PAGES_RULE = <<~RULE
 rule render
-  command = pandoc -f markdown -t html --variable papersize:letter --file-scope -o $out $in
+  command = pandoc -f markdown -t html --css #{CSS_FILE} --variable papersize:letter --file-scope -o $out $in
   description = render $out ← $in
 
 RULE
@@ -30,7 +31,7 @@ File.open(BUILD_FILE, "w") { |f|
     # f.write "build #{output_file}: recipe2pdf #{input_file}\n"
   }
 
-  f.write "build #{FULL_OUTPUT_FILE}: render #{input_files.join(' ')}\n"
+  f.write "build #{FULL_OUTPUT_FILE}: render #{input_files.join(' ')} | #{CSS_FILE}\n"
 
   recipe_count = input_files.size
   puts "Wrote build script for #{recipe_count} #{"recipe".pluralize(recipe_count)} to #{BUILD_FILE}."
