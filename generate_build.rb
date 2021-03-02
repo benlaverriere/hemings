@@ -22,7 +22,13 @@ RULE
 
 COMBINE_PAGES_RULE = <<~RULE
   rule render
-    command = pandoc -f markdown -t html --css=#{CSS_FILE} --self-contained --metadata title=#{TITLE} -o $out $in
+    command = pandoc -f markdown+smart \
+                     -t html \
+                     --css=#{CSS_FILE} \
+                     --self-contained \
+                     --metadata title=#{TITLE} \
+                     -o $out \
+                     $in
     description = render $out ← $in
 RULE
 

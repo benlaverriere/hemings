@@ -20,6 +20,7 @@ readable in its raw form after a quick search.
   - This doesn't install Ruby, so ensure you have a recent Ruby available
 0. `generate_build.rb` to create the build script based on contents of `./plain/*.md`
 0. `ninja` to render the individual recipes to PDF
+  - For continuous editing, `cat <(g ls-files) <(fd plain) | entr ninja`
 
 ## ideas, questions, TODOs
 
